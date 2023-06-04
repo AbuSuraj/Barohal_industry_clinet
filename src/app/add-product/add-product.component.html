@@ -1,0 +1,31 @@
+<div class="add-product">
+    <h1>Add New Product</h1>
+    <!-- <p class="message-p">{{addProductMessage}}</p> -->
+    <form [formGroup]="addProductForm" (ngSubmit)="addProduct(addProductForm)">
+        <div>
+          <label>
+            Name:
+            <input class="form-input" type="text" formControlName="name" placeholder="Your name">
+          </label>
+        </div>
+        <div>
+          <label>
+            Price:
+            <input class="form-input" formControlName="price" type="text" placeholder="Your email">
+          </label>
+        </div>
+        <div>
+            <label for="description" class="form-label">description</label>
+            <textarea class="form-control" id="description" rows="3"></textarea> 
+        </div>
+        <div>
+          <label>
+            Photo:
+            <input class="form-input" formControlName="photo" placeholder="product description">
+          </label>
+        </div>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+    
+     
