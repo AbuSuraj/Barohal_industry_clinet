@@ -1,31 +1,30 @@
-<div class="add-product">
-    <h1>Add New Product</h1>
-    <!-- <p class="message-p">{{addProductMessage}}</p> -->
-    <form [formGroup]="addProductForm" (ngSubmit)="addProduct(addProductForm)">
-        <div>
-          <label>
-            Name:
-            <input class="form-input" type="text" formControlName="name" placeholder="Your name">
-          </label>
-        </div>
-        <div>
-          <label>
-            Price:
-            <input class="form-input" formControlName="price" type="text" placeholder="Your email">
-          </label>
-        </div>
-        <div>
-            <label for="description" class="form-label">description</label>
-            <input class="form-control" id="description"  >
-        </div>
-        <div>
-          <label>
-            Photo:
-            <input class="form-input" formControlName="photo" placeholder="product description">
-          </label>
-        </div>
-        <button type="submit">Save</button>
-      </form>
+<div class="add-product-container rounded bg-light shadow-sm p-3 mb-5 mt-5">
+  <h1>Add New Product</h1>
+  <form class="add-product-form" [formGroup]="addProductForm" (ngSubmit)="addProduct(addProductForm)">
+
+    <div class="form-outline mb-4">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" />
     </div>
-    
-     
+
+
+    <div class="form-outline mb-4">
+      <label class="form-label">price</label>
+      <input type="text" class="form-control" />
+    </div>
+
+    <div class="form-outline mb-4">
+      <label class="form-label">Image</label>
+      <input type="text" class="form-control" />
+    </div>
+
+    <div class="form-outline mb-4">
+      <label class="form-label">Descriptio</label>
+      <textarea type="text" class="form-control"></textarea>
+    </div>
+
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Add Product</button>
+  </form>
+</div>

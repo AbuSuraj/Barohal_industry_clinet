@@ -1,5 +1,13 @@
+.add-product-container{
+    width: 25%;
+    margin: 40px auto;
+}
+.add-product-form{
+    width: 75%;
+    margin: 20px auto;
+}
 h1{
-    color: blueviolet;
+    color: rgb(43, 80, 226);
     text-align: center;
 }
 .add-product{
