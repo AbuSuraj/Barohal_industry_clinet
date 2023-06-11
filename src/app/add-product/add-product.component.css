@@ -6,10 +6,14 @@
     width: 75%;
     margin: 20px auto;
 }
-h1{
-    color: rgb(43, 80, 226);
+h4{ 
     text-align: center;
 }
 .add-product{
     text-align: center;
+}
+.add-product-input{
+    background-color:aliceblue;
+    border: 1px solid aliceblue;
+    border-radius: 10px;
 }
