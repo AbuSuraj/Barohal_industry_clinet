@@ -1,0 +1,12 @@
+.product-list-table{
+    width: 800px;
+    
+}
+.product-list-icon-group{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.product-list-icon-group li{
+    cursor: pointer;
+}
