@@ -13,7 +13,12 @@ export class ProdutcsService {
   getProducts() {
     return this.http.get<product[]>('http://localhost:5000/get-products');
   }
+
   addProduct(data: product){
     return this.http.post('http://localhost:5000/add-product', data);
   }
+  
+  deleteaAProduct(id: any){
+    return this.http.delete(`http://localhost:5000/products/${id}`);
+  } 
 }

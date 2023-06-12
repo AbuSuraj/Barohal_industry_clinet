@@ -24,4 +24,15 @@ export class ProductListComponent implements OnInit {
         console.log(this.product_list)
       })
     }
+
+    update(id:any){
+      console.log(id);
+    }
+
+    deleteP(id:any){
+      this.productService.deleteaAProduct(id).subscribe(result =>{
+        console.log('deleted ', id);
+      })
+      this.products();
+    }
 }
