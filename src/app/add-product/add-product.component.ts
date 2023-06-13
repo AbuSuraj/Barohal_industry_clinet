@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements  OnInit{
-  id: number | string | null= 0; 
+  id: any; 
   product: product | undefined;
 
   constructor(private productService: ProdutcsService,  
@@ -22,7 +22,7 @@ export class AddProductComponent implements  OnInit{
   addProductForm!: FormGroup;
   
   ngOnInit(): void { 
-     this.id = this.route.snapshot.paramMap.get('id');
+     this.id = (this.route.snapshot.paramMap.get('id'))?.toString();
      console.log(this.id)
     if (this.id) {
       this.getFormValue(this.id);
@@ -30,7 +30,7 @@ export class AddProductComponent implements  OnInit{
     this.initializeProductForm();
   
   }
-  private getFormValue(id:any){
+  private getFormValue(id:string){
     this.productService.getaProduct(id).subscribe(result =>{
       this.product = result;
       if(result){
@@ -53,11 +53,21 @@ export class AddProductComponent implements  OnInit{
     });
   }
 
-  addProduct(product: product){
+  save(product: product){
  console.log(product);
- this.productService.addProduct(product).subscribe(result =>{
-  console.log('product added',result);
- });
- this.addProductForm.reset()
-  }
+//  update a product
+ if(this.id){
+  this.productService.updateProduct(this.id, product).subscribe(result =>{
+    console.log(this.id)
+      this.router.navigate(['product-details']);
+  })
+ }
+//  add a product 
+ else {
+   this.productService.addProduct(product).subscribe(result =>{
+    console.log('product added',result);
+   });
+   this.addProductForm.reset()
+    }
+ }
 }

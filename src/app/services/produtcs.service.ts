@@ -26,7 +26,7 @@ export class ProdutcsService {
     return this.http.delete(`http://localhost:5000/delete-product/${id}`);
   }
   
-  updateProduct(id:any, product: product){
-    return this.http.put(`http://localhost:5000/update-product/${id}`, product)
+  updateProduct(id:string, product: product){
+    return this.http.patch<product>(`http://localhost:5000/update-product/${id}`, product)
   }
 }

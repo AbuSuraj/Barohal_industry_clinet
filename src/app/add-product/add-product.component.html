@@ -1,6 +1,6 @@
 <div class="add-product-container rounded bg-light shadow-sm p-3 mb-5 mt-5">
   <h4>{{id ? 'Update ' : ' Add New '}}Product</h4>
-  <form class="add-product-form" [formGroup]="addProductForm" (ngSubmit)="addProduct(addProductForm.value)">
+  <form class="add-product-form" [formGroup]="addProductForm" (ngSubmit)="save(addProductForm.value)">
 
     <div class="form-outline mb-4">
       <label class="form-label">Name</label>
@@ -24,6 +24,6 @@
     </div>
     
     <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Add Product</button>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Save Product</button>
   </form>
 </div>
