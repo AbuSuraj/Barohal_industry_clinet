@@ -11,7 +11,11 @@ export class ProdutcsService {
 
 
   getProducts() {
-    return this.http.get<product[]>('http://localhost:5000/get-products');
+    return this.http.get<product[]>('http://localhost:5000/products');
+  }
+
+  getaProduct(id:any){
+    return this.http.get<product>(`http://localhost:5000/product/${id}`)
   }
 
   addProduct(data: product){
@@ -19,10 +23,10 @@ export class ProdutcsService {
   }
   
   deleteaAProduct(id: any){
-    return this.http.delete(`http://localhost:5000/products/${id}`);
+    return this.http.delete(`http://localhost:5000/delete-product/${id}`);
   }
   
   updateProduct(id:any, product: product){
-    return this.http.put(`http://localhost:5000/products/${id}`, product)
+    return this.http.put(`http://localhost:5000/update-product/${id}`, product)
   }
 }

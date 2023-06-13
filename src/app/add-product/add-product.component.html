@@ -1,5 +1,5 @@
 <div class="add-product-container rounded bg-light shadow-sm p-3 mb-5 mt-5">
-  <h4>Add New Product</h4>
+  <h4>{{id ? 'Update ' : ' Add New '}}Product</h4>
   <form class="add-product-form" [formGroup]="addProductForm" (ngSubmit)="addProduct(addProductForm.value)">
 
     <div class="form-outline mb-4">
