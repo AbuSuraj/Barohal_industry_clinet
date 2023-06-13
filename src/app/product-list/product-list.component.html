@@ -9,11 +9,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of product_list; let i = index">
+      <tr *ngFor="let product of products; let i = index">
         <th scope="row">{{i+1}}</th>
         <td>{{product.name}}</td>
         <td class="product-list-icon-group">
-            <li (click) = 'update(product._id)'><i class="fa-solid fa-pencil"></i></li>
+            <li [routerLink]="['update-product', product._id]" ><i class="fa-solid fa-pencil"></i></li>
             <li (click)="deleteP(product._id)"><i class="fa-solid fa-trash"></i></li>
             <li><i class="fa-regular fa-square-plus"></i></li>
         </td>

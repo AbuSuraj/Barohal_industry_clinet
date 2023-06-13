@@ -20,5 +20,9 @@ export class ProdutcsService {
   
   deleteaAProduct(id: any){
     return this.http.delete(`http://localhost:5000/products/${id}`);
-  } 
+  }
+  
+  updateProduct(id:any, product: product){
+    return this.http.put(`http://localhost:5000/products/${id}`, product)
+  }
 }

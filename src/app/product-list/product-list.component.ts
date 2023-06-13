@@ -10,18 +10,18 @@ import { ProdutcsService } from '../services/produtcs.service';
 export class ProductListComponent implements OnInit {
 
   public sL = 1;
-  product_list: product [] = [];
+  products: product [] = [];
 
   constructor(private productService: ProdutcsService){}
 
   ngOnInit(): void {
-      this.products();
+      this.getProducts();
   }
     
-    products(){
+  getProducts(){
       this.productService.getProducts().subscribe(result =>{
-        this.product_list = result;
-        console.log(this.product_list)
+        this.products = result;
+        console.log(this.products)
       })
     }
 
@@ -33,6 +33,6 @@ export class ProductListComponent implements OnInit {
       this.productService.deleteaAProduct(id).subscribe(result =>{
         console.log('deleted ', id);
       })
-      this.products();
+      this.getProducts();
     }
 }
