@@ -15,7 +15,7 @@
         <td class="product-list-icon-group">
             <li [routerLink]="['update-product', product._id]" ><i class="fa-solid fa-pencil"></i></li>
             <li (click)="deleteP(product._id)"><i class="fa-solid fa-trash"></i></li>
-            <li><i class="fa-regular fa-square-plus"></i></li>
+            <li routerLink='add-product' ><i class="fa-regular fa-square-plus"></i></li>
         </td>
       </tr>
     </tbody>

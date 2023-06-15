@@ -25,6 +25,9 @@ export class ProductListComponent implements OnInit {
       })
     }
 
+    addProduct(){
+      
+    }
     update(id:any){
       console.log(id);
     }
