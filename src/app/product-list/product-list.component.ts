@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
   getProducts(){
       this.productService.getProducts().subscribe(result =>{
         this.products = result;
-        console.log(this.products)
+         
       })
     }
 
@@ -34,7 +34,6 @@ export class ProductListComponent implements OnInit {
 
     deleteP(id:any){
       this.productService.deleteaAProduct(id).subscribe(result =>{
-        console.log('deleted ', id);
       })
       this.getProducts();
     }
