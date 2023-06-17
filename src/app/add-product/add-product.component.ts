@@ -54,18 +54,18 @@ export class AddProductComponent implements  OnInit{
   }
 
   save(product: product){
- console.log(product);
+ 
 //  update a product
  if(this.id){
   this.productService.updateProduct(this.id, product).subscribe(result =>{
-    console.log(this.id)
+      
       this.router.navigate(['product-details']);
   })
  }
 //  add a product 
  else {
    this.productService.addProduct(product).subscribe(result =>{
-    console.log('product added',result);
+    
    });
    this.addProductForm.reset()
     }
