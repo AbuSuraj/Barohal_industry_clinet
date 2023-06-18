@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ProdutcsService } from '../services/produtcs.service';
-import { product } from '../DataTypes/dataTypes';
+import { ProdutcsService } from '../Shared/services/produtcs.service';
+import { product } from '../Shared/DataTypes/dataTypes';
 
 @Component({
   selector: 'app-products-detail',

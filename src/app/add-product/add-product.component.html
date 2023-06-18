@@ -2,25 +2,32 @@
   <h4>{{id ? 'Update ' : ' Add New '}}Product</h4>
   <form class="add-product-form" [formGroup]="addProductForm" (ngSubmit)="save(addProductForm.value)">
 
-    <div class="form-outline mb-4">
+    <div class="  mb-4">
       <label class="form-label">Name</label>
-      <input type="text" formControlName="name" class="form-control add-product-input" />
+      <input placeholder="Enter Product Name " type="text" formControlName="name" class="form-control add-product-input" />
     </div>
 
 
-    <div class="form-outline mb-4">
+    <div class="  mb-4 form-group">
+      <label class="form-label">Categories</label>
+      <select placeholder="Select" formControlName="categories" class="form-select add-product-input" >
+        <option selected class="form-option" value="" disabled   >Select Category</option>
+        <option  *ngFor="let category of ProductCateogries" value="{{category.value}}">{{category.name}}</option>
+      </select>
+    </div>
+    <div class="  mb-4">
       <label class="form-label">price</label>
-      <input type="text" formControlName="price" class="form-control add-product-input" />
+      <input placeholder="Enter Product Price" type="text" formControlName="price" class="form-control add-product-input" />
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="  mb-4">
       <label class="form-label">Image</label>
-      <input type="text" formControlName="image" class="form-control add-product-input" />
+      <input placeholder="Enter Product Image" type="text" formControlName="image" class="form-control add-product-input" />
     </div>
 
-    <div class="form-outline mb-4">
+    <div class="  mb-4">
       <label class="form-label">Description</label>
-      <textarea type="text" formControlName="description" class="form-control add-product-input"></textarea>
+      <textarea placeholder="description" type="text" formControlName="description" class="form-control add-product-input"></textarea>
     </div>
     
     <!-- Submit button -->
