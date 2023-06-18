@@ -17,6 +17,9 @@ export class ProdutcsService {
   getaProduct(id:any){
     return this.http.get<product>(`http://localhost:5000/product/${id}`)
   }
+  getSearchProduct(categroy:string){
+    return this.http.get<product[]>(`http://localhost:5000/search-products/${categroy}`)
+  }
 
   addProduct(data: product){
     return this.http.post('http://localhost:5000/add-product', data);

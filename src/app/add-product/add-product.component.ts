@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ProdutcsService } from '../Shared/services/produtcs.service';
 import { product } from '../Shared/DataTypes/dataTypes';
 import { ActivatedRoute, Router } from '@angular/router'; 
+import { ProductCateogries } from '../Shared/product-categories';
 
 @Component({
   selector: 'app-add-product',
@@ -13,7 +14,8 @@ export class AddProductComponent implements  OnInit{
   id: any; 
   product: product | undefined;
   isOthersCategory: boolean = false;
-  otherCategory: string = ''
+  otherCategory: string = '';
+  ProductCateogries:any;
   constructor(private productService: ProdutcsService,  
               private router: Router,
               private route: ActivatedRoute
@@ -25,6 +27,7 @@ export class AddProductComponent implements  OnInit{
   addProductForm!: FormGroup;
   
   ngOnInit(): void { 
+    this.ProductCateogries = ProductCateogries;
      this.id = (this.route.snapshot.paramMap.get('id'))?.toString();
      console.log(this.id)
     if (this.id) {
@@ -79,17 +82,5 @@ export class AddProductComponent implements  OnInit{
    console.log(  this.isOthersCategory)
  }
 
-  ProductCateogries = [
-  {name:'Fridge', value:'Fridge'},
-  {name:'TV', value:'tv'},
-  {name:'furniture', value:'furniture'},
-  {name:'Mobile', value:'mobile'},
-  {name:'Computer', value:'computer'},
-  {name:'Electronics', value:'electronics'},
-  {name:'Car', value:'car'},
-  {name:'Motorbike', value:'motorbike'},
-  {name:'Cosmetics', value:'Cosmetics'},
-  {name:'House Hold product', value:'houshold'},
-  // {name:'Others..', value:'others'},
- ]
+
 }

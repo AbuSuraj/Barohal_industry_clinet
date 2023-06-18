@@ -1,9 +1,26 @@
-<div class="">
+<div>
     <div class="text-center my-2">
         <h3 style="color:dimgray">Products Detail</h3>
     </div>
-    <div class="my-3 mx-5 row justify-content-between ">
-        <div *ngFor="let product of products" class="card col-4 mx-2 my-3" style="width: 20rem;">
+    <div class="my-3 mx-5 d-flex justify-content-between">
+      <div class="mt-5">
+        <div mdbDropdown class="dropdown">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            aria-expanded="false"
+            mdbDropdownToggle
+          >
+           Search Product by categories
+          </button>
+          <ul *ngFor="let category of ProductCateogries" mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li (click)="categorySelect(category.value)" class="dropdown-item dropdown-list">{{category.name}}</li> 
+          </ul>
+        </div>
+      </div>
+        <div class="row ms-5">
+          <div *ngFor="let product of products" class="card col-lg-4  col-md-3 col-sm-12  mx-2 my-3" style="width: 20rem;">
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
               <img [src]="product?.image" class="img-fluid"/>
               <!-- <a href="#!">
@@ -14,8 +31,10 @@
               <h5 class="card-title">{{product.name}}</h5>
               <p class="card-text"> {{product.price}}</p>
               <p class="card-text"> {{product.description}}</p>
-              <a href="#!" class="btn btn-primary">Button</a>
+              <a href="#!" class="btn btn-primary">Details</a>
             </div>
         </div>
-    </div>
-</div>
+        </div>
+      </div>
+ </div>
+
