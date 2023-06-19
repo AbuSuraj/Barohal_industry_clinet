@@ -20,25 +20,26 @@ export class ProductsDetailComponent implements OnInit {
   
   ngOnInit(): void {
     
-    // this.category = this.route.snapshot.paramMap.get('category')?.toLowerCase();
-    // console.log(this.category);
+    this.category = this.route.snapshot.paramMap.get('category')?.toLowerCase();
+    console.log(this.category);
     this.ProductCateogries = ProductCateogries;
-    
+    if(this.category == null || undefined){
       this.productsService.getProducts().subscribe(results =>{
         this.products = results;
       })
       
- 
+    }
+    else{
+      this.productsService.getSearchProduct( this.category).subscribe(result =>{
+        this.products = result;
+       })
+    }
   }
   
-  categorySelect(category:string){
-    console.log("option selected", category);
-    this.router.navigate([`/search-products/${category}`]);
-
-    this.productsService.getSearchProduct(category).subscribe(result =>{
-      this.products = result;
-      console.log(this.products);
-     })
+  categorySelect(category:string){ 
+  this.productsService.getSearchProduct(category).subscribe(result =>{
+     this.products = result;
+  })
 }
   }
 
