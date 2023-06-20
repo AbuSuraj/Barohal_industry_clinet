@@ -30,14 +30,14 @@ export class ProductsDetailComponent implements OnInit {
       
     }
     else{
-      this.productsService.getSearchProduct( this.category).subscribe(result =>{
+      this.productsService.getSearchProductByType( this.category).subscribe(result =>{
         this.products = result;
        })
     }
   }
   
   categorySelect(category:string){ 
-  this.productsService.getSearchProduct(category).subscribe(result =>{
+  this.productsService.getSearchProductByType(category).subscribe(result =>{
      this.products = result;
   })
 }

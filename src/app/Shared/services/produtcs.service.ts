@@ -17,8 +17,11 @@ export class ProdutcsService {
   getaProduct(id:any){
     return this.http.get<product>(`http://localhost:5000/product/${id}`)
   }
-  getSearchProduct(categroy:string){
+  getSearchProductByType(categroy:string){
     return this.http.get<product[]>(`http://localhost:5000/search-products/${categroy}`)
+  }
+  getSearchProductByName(name:string){
+    return this.http.get<product[]>(`http://localhost:5000/search-products-by-name/${name}`)
   }
 
   addProduct(data: product){
