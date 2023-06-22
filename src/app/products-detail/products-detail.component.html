@@ -31,7 +31,9 @@
               <h5 class="card-title">{{product.name}}</h5>
               <p class="card-text"> {{product.price}}</p>
               <p class="card-text"> {{product.description}}</p>
-              <a href="#!" class="btn btn-primary">Details</a>
+              <button [routerLink]="['single-detail-product',product._id]" type="button" class="btn btn-primary">Details
+                <app-single-product-details productd="product"></app-single-product-details>
+              </button>
             </div>
         </div>
         </div>

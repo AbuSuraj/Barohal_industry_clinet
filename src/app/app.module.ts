@@ -27,6 +27,7 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SingleProductDetailsComponent } from './single-product-details/single-product-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductsDetailComponent,
     HomeComponent,
     ProductListComponent,
-    NavbarComponent
+    NavbarComponent,
+    SingleProductDetailsComponent
   ],
   imports: [
     BrowserModule,
