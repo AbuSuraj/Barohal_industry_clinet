@@ -14,7 +14,7 @@ export class NavbarComponent {
   searchProduct(query: KeyboardEvent){
     if(query){
     const element = query.target as HTMLInputElement;
-    // console.log(element.value);
+    
     this.productService.getSearchProductByName(element.value).subscribe(result =>{
       this.products = result;
       console.log(this.products);
