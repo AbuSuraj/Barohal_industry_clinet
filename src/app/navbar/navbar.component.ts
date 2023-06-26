@@ -23,6 +23,5 @@ export class NavbarComponent {
 }
   hideSearch(){
     this.products = undefined;
-    console.log(this.products);
   }
 }
