@@ -6,7 +6,7 @@ import { ProdutcsService } from 'src/app/Shared/services/produtcs.service';
 @Component({
   selector: 'app-single-product-details',
   templateUrl: './single-product-details.component.html',
-  styleUrls: ['./single-product-details.component.css']
+  styleUrls: ['./single-product-details.component.less']
 })
 export class SingleProductDetailsComponent implements OnInit {
    product:  product | undefined;
