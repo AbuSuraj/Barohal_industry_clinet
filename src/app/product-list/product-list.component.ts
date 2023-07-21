@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
     }
 
     addProduct(){
-      
+      console.log("addProduct")
     }
     update(id:any){
       console.log(id);
